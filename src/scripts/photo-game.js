@@ -69,8 +69,8 @@ AFRAME.registerComponent('egg-click', {
     }
 });
 
+/*Click event for egg-button*/
 function eggButtonClick() {
-    const target = document.querySelector('#egg-button');
     const model = document.querySelector('#eggModel');
 
 
@@ -83,8 +83,8 @@ function eggButtonClick() {
     }
 }
 
+/*Click event for balloon-button*/
 function balloonButtonClick() {
-    const target = document.querySelector('#balloon-button');
     const model = document.querySelector('#balloonModel');
 
 
@@ -97,8 +97,8 @@ function balloonButtonClick() {
     }
 }
 
+/*Click event for bunny-button*/
 function bunnyButtonClick() {
-    const target = document.querySelector('#bunny-button');
     const model = document.querySelector('#bunnyModel');
 
 
@@ -111,8 +111,8 @@ function bunnyButtonClick() {
     }
 }
 
+/*Click event for flower-button*/
 function flowerButtonClick() {
-    const target = document.querySelector('#flower-button');
     const model = document.querySelector('#flowerModel');
 
 
@@ -123,6 +123,14 @@ function flowerButtonClick() {
     else {
         model.setAttribute('visible', 'true');
     }
+}
+
+function hideModel() {
+    document.querySelector('#flowerModel').setAttribute('visible', 'false');
+    document.querySelector('#bunnyModel').setAttribute('visible', 'false');
+    document.querySelector('#balloonModel').setAttribute('visible', 'false');
+    document.querySelector('#eggModel').setAttribute('visible', 'false');
+    console.log("model hidden");
 }
 
 function takePhoto() {

@@ -39,13 +39,19 @@
     document.addEventListener("DOMContentLoaded", function () {
       var gameStart = false;
       const photoGameTarget = document.querySelector("#photo-game-target");
+      const bunnyModel = document.querySelector("#bunny");
+      const easterEgg = document.querySelector("#easter-egg");
+      const flower = document.querySelector("#flower");
+      const balloon = document.querySelector("#balloon");
 
       photoGameTarget.addEventListener("targetFound", event => {
         loadPage('../src/views/photo-game-overlay.html', 'overlay');
+
       });
 
       photoGameTarget.addEventListener("targetLost", event => {
         loadPage('../src/views/blank.html', 'overlay');
+        hideModel();
       });
     })
   </script>
@@ -142,12 +148,12 @@
       <!-- Photo Game -->
       <a-entity id="photo-game-target" mindar-image-target="targetIndex: 0" target-find-ui-trigger>
         <a-entity position="0 -1.9 0">
-          <a-gltf-model id="bunnyModel" src="#bunny" scale="0.5 0.5 0.5" position="0 2 -3" visible="false"
+          <a-gltf-model id="bunnyModel" src="#bunny" scale="0.5 0.5 0.5" position="-0.7 1.7 -3" visible="false"
             animation-mixer></a-gltf-model>
 
           <a-gltf-model id="flowerModel" src="#flower" scale="1 1 1" position="1 2 -3" visible="false"></a-gltf-model>
 
-          <a-gltf-model id="balloonModel" src="#balloon" scale="0.2 0.2 0.2" position="-1 2.5 -3"
+          <a-gltf-model id="balloonModel" src="#balloon" scale="0.2 0.2 0.2" position="-1.2 2.3 -3"
             visible="false"></a-gltf-model>
 
           <a-gltf-model id="eggModel" src="#easter-egg" scale="1 1 1" position="0.2 2 -3"
@@ -160,20 +166,12 @@
       <!-- Flying Game -->
       <a-entity id="flying-game-target" mindar-image-target="targetIndex: 1" target-find-ui-trigger>
         <a-entity id="game-container" scale="1 1 1" position="0 -2 -5">
-          <!-- <a-entity id="flying-game" collectable-tick score-tick position = "0 -5 -15">
-        <a-box color="green" scale =" 50 0.1 4" position="0 -5 -15"  rotation="0 0 0"></a-box>
-          <a-entity
-          id="sprite"
-          gltf-model="url(./src/assets/3dmodels/Sprites/FlyingBaloon.glb)#model"
-          scale="1 1 1"
-          position="0 10 0"
-          rotation="0 -180 0"
-          sprite-height="1"
-          sprite-width="3"
-          
-        >
-        </a-entity>
-      </a-entity> -->
+          <a-entity id="flying-game" collectable-tick score-tick position="0 -5 -15">
+            <a-box color="green" scale=" 50 0.1 4" position="0 -5 -15" rotation="0 0 0"></a-box>
+            <a-entity id="sprite" gltf-model="url(./src/assets/3dmodels/Sprites/FlyingBaloon.glb)#model" scale="1 1 1"
+              position="0 10 0" rotation="0 -180 0" sprite-height="1" sprite-width="3">
+            </a-entity>
+          </a-entity>
         </a-entity>
       </a-entity>
 
