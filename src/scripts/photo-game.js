@@ -69,8 +69,8 @@ AFRAME.registerComponent('egg-click', {
     }
 });
 
+/*Click event for egg-button*/
 function eggButtonClick() {
-    const target = document.querySelector('#egg-button');
     const model = document.querySelector('#eggModel');
 
 
@@ -83,8 +83,8 @@ function eggButtonClick() {
     }
 }
 
+/*Click event for balloon-button*/
 function balloonButtonClick() {
-    const target = document.querySelector('#balloon-button');
     const model = document.querySelector('#balloonModel');
 
 
@@ -97,8 +97,8 @@ function balloonButtonClick() {
     }
 }
 
+/*Click event for bunny-button*/
 function bunnyButtonClick() {
-    const target = document.querySelector('#bunny-button');
     const model = document.querySelector('#bunnyModel');
 
 
@@ -111,8 +111,8 @@ function bunnyButtonClick() {
     }
 }
 
+/*Click event for flower-button*/
 function flowerButtonClick() {
-    const target = document.querySelector('#flower-button');
     const model = document.querySelector('#flowerModel');
 
 
@@ -123,6 +123,14 @@ function flowerButtonClick() {
     else {
         model.setAttribute('visible', 'true');
     }
+}
+
+function hideModel() {
+    document.querySelector('#flowerModel').setAttribute('visible', 'false');
+    document.querySelector('#bunnyModel').setAttribute('visible', 'false');
+    document.querySelector('#balloonModel').setAttribute('visible', 'false');
+    document.querySelector('#eggModel').setAttribute('visible', 'false');
+    console.log("model hidden");
 }
 
 function takePhoto() {
@@ -243,8 +251,8 @@ AFRAME.registerComponent('photo-click', {
 //Function to control UI visibility
 function setUIVisible(ui) {
     if (ui) {
-        document.querySelector('#info-button').setAttribute('visible', 'false');
-        document.querySelector('#setting-button').setAttribute('visible', 'false');
+        // document.querySelector('#info-button').setAttribute('visible', 'false');
+        // document.querySelector('#setting-button').setAttribute('visible', 'false');
         document.querySelector('#flower-button').setAttribute('visible', 'false');
         document.querySelector('#bunny-button').setAttribute('visible', 'false');
         document.querySelector('#photo-button').setAttribute('visible', 'false');
@@ -253,8 +261,8 @@ function setUIVisible(ui) {
 
         console.log("hiding ui elements");
     } else {
-        document.querySelector('#info-button').setAttribute('visible', 'true');
-        document.querySelector('#setting-button').setAttribute('visible', 'true');
+        // document.querySelector('#info-button').setAttribute('visible', 'true');
+        // document.querySelector('#setting-button').setAttribute('visible', 'true');
         document.querySelector('#flower-button').setAttribute('visible', 'true');
         document.querySelector('#bunny-button').setAttribute('visible', 'true');
         document.querySelector('#photo-button').setAttribute('visible', 'true');
@@ -262,18 +270,4 @@ function setUIVisible(ui) {
         document.querySelector('#balloon-button').setAttribute('visible', 'true');
         console.log("unhiding ui elements");
     }
-};
-
-function engClick() {
-    var engButton = document.querySelector("#engButton");
-    var divLanguages = document.querySelector("#language");
-    var background = document.querySelector("#background");
-    var scene = document.querySelector("#scene");
-
-    console.log("eng button clicked");
-
-    background.style.display = "none";
-    divLanguages.style.display = "none";
-    scene.setAttribute("visible", "true");
-
 };
