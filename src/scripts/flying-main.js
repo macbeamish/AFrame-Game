@@ -8,7 +8,6 @@ var FLYING_GAME_ONBOARDING_COMPLETE = false;
 
 console.log("flying-main.js loaded");
 
-//todo
 function initializeFlyingGame() {
  // Create the game entity
 //  const gameEntity = document.createElement("a-entity");
